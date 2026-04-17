@@ -515,15 +515,15 @@ export class Game {
             this.renderer.drawImage(plusBlock.spriteName, plusBlock.x, plusBlock.y - 2, plusBlock.width, plusBlock.height);
         }
         this.renderer.drawImage(this.player.spriteName, this.player.x, this.player.y - 10, this.player.width, this.player.height);
-        const levelText = `Niveau ${this.levelManager.getCurrentLevelNumber()} / ${this.levelManager.getTotalLevels()}`;
+        const levelText = `Level ${this.levelManager.getCurrentLevelNumber()} / ${this.levelManager.getTotalLevels()}`;
         this.renderer.drawText(levelText, 10, 20, '#ffffff', 18);
-        this.renderer.drawText('Pijltjestoetsen/WASD: Bewegen | Shift ingedrukt houden: Blokken vasthouden | R: Reset', 10, 45, '#ffffff', 14);
+        this.renderer.drawText('Arrow keys/WASD: Move | Hold Shift: Hold blocks | R: Reset', 10, 45, '#ffffff', 14);
         if (this.levelComplete && !this.gameComplete) {
-            this.renderer.drawText('Niveau voltooid!', this.canvas.width / 2 - 80, this.canvas.height / 8, '#00ff00', 24);
+            this.renderer.drawText('Level completed!', this.canvas.width / 2 - 80, this.canvas.height / 8, '#00ff00', 24);
         }
         if (this.gameComplete) {
-            this.renderer.drawText('Gefeliciteerd!', this.canvas.width / 2 - 100, this.canvas.height / 2 - 20, '#ffff00', 28);
-            this.renderer.drawText('Je hebt alle niveaus voltooid!', this.canvas.width / 2 - 120, this.canvas.height / 2 + 20, '#ffffff', 20);
+            this.renderer.drawText('Congratulations!', this.canvas.width / 2 - 100, this.canvas.height / 2 - 20, '#ffff00', 28);
+            this.renderer.drawText('You completed all the levels!', this.canvas.width / 2 - 120, this.canvas.height / 2 + 20, '#ffffff', 20);
         }
     }
     getGrid() {
